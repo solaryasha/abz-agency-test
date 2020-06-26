@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import User from './User/User';
 import { Button } from '../Button/Button';
+import { Heading } from '../Heading/Heading';
 
 export class Users extends Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ export class Users extends Component {
   render() {
     return (
       <section>
-        <h2>Our cheerful users</h2>
+        <Heading content="Our cheerful users" />
         <p>
           Attention! Sorting users by registration date
         </p>
