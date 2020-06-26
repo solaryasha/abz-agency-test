@@ -1,8 +1,10 @@
 {
   "name": "abz-agency-test",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mate-academy/eslint-config-react": "*",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -13,6 +15,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "lint:js": "eslint ./src",
+    "lint:css": "stylelint ./src",
+    "lint:html": "linthtml ./src",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -30,5 +38,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@linthtml/linthtml": "^0.4.1",
+    "@mate-academy/linthtml-config": "0.0.1",
+    "@mate-academy/stylelint-config": "0.0.9",
+    "gh-pages": "^3.1.0",
+    "stylelint": "^13.6.1"
   }
 }
