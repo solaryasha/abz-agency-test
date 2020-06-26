@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const User = () => {
+const User = ({ content } ) => {
+  const { name, email, phone, position, photo } = content;
+
   return (
     <div>
-      <img src="../../assets/photo-cover.png" alt="user" />
-      <h3>Elizabeth</h3>
-      <p>Frontend developer</p>
-      <p>email</p>
-      <p>phone</p>
+      <img src={photo} alt="user" />
+      <h3>{name}</h3>
+      <p>{position}</p>
+      <p>{email}</p>
+      <p>{phone}</p>
     </div>
   );
 };
