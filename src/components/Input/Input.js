@@ -9,7 +9,7 @@ export class Input extends Component {
   render() {
     return (
       <>
-        <label Htmlfor={this.props.name}>
+        <label htmlFor={this.props.name}>
           <input
             type={this.props.type}
             name={this.props.name}

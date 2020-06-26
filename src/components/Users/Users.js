@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import User from './User/User';
 import { Button } from '../Button/Button';
 import { Heading } from '../Heading/Heading';
-import { url } from '../../API/urlHandler';
+import { getUrl } from '../../API/urlHandler';
 
 export class Users extends Component {
   state = {
-    data: null,
+    data: [],
+    page: 1,
   }
 
   componentDidMount() {
-    fetch(url)
+    const correctUrl = getUrl(this.state.page, 6);
+
+    this.#downloadData(correctUrl);
+  }
+
+  showMoreClick = () => {
+    const correctUrl = getUrl(this.state.page, 6);
+
+    this.#downloadData(correctUrl);
+  }
+
+  #downloadData = (correctUrl) => {
+    fetch(correctUrl)
       .then(response => response.json())
-      .then(({ users }) => {
-        this.setState({ data: users });
-      });
+      .then(({ users }) => this.setState(prevState => (
+        {
+          data: prevState.data.concat(users), page: prevState.page + 1,
+        }
+      )));
   }
 
   render() {
@@ -33,6 +47,7 @@ export class Users extends Component {
         <Button
           text="Show more"
           type="button"
+          onClick={this.showMoreClick}
         />
       </section>
     );
