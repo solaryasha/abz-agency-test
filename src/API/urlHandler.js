@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 
 import queryString from 'query-string';
 
 const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
 
-// eslint-disable-next-line max-len
 export const positionsUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/positions';
+export const tokenUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/token';
 
 export const getUrl = (pageNumber, howMuch) => queryString.stringifyUrl({
   url,

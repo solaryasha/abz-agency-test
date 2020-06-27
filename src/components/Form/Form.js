@@ -5,6 +5,8 @@ import './Form.scss';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import { RadioButton } from '../RadioButton/RadioButton';
+import FileInput from '../FileInput/FileInput';
+import { tokenUrl } from '../../API/urlHandler';
 
 export class Form extends Component {
   state = {
@@ -12,20 +14,32 @@ export class Form extends Component {
   }
 
   handleInputChange = ({ target }) => {
-    const { value, type, id } = target;
+    const { value, name, id } = target;
 
-    const valueToSave = type === 'radio'
+    const valueToSave = name === 'radio'
       ? id
       : value;
 
     this.setState({
-      [type]: valueToSave,
+      [name]: valueToSave,
+    });
+  }
+
+  getToken = () => {
+    fetch(tokenUrl)
+      .then(response => response.json())
+      .then(({ token })=> this.setState({ token }));
+  }
+
+  handleUploadFile = (event) => {
+    this.setState({
+      image: event.target.files[0],
     });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log([...event.target.children]);
+    this.getToken();
   }
 
   render() {
@@ -50,7 +64,7 @@ export class Form extends Component {
           value={this.state.phone}
         />
         <RadioButton onChange={this.handleInputChange} />
-        <Input type="file" onChange={this.handleInputChange} />
+        <FileInput onChange={this.handleUploadFile} />
         <Button type="submit" text="Sign up now" />
       </form>
     );

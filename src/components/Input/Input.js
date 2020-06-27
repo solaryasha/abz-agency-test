@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import PropTypes from 'prop-types';
 
-export const Input = (props) => (
+export const Input = props => (
   <>
     <label htmlFor={props.name}>{props.name}</label>
     <input
