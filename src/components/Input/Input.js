@@ -1,27 +1,19 @@
-import React, { Component } from 'react';
+import React, {} from 'react';
 import PropTypes from 'prop-types';
 
-export class Input extends Component {
-  componentDidMount() {
-
-  }
-
-  render() {
-    return (
-      <>
-        <label htmlFor={this.props.name}>
-          <input
-            type={this.props.type}
-            name={this.props.name}
-            id={this.props.name}
-            value=""
-          />
-          {this.props.name}
-        </label>
-      </>
-    );
-  }
-}
+export const Input = (props) => (
+  <>
+    <label htmlFor={props.name}>
+      <input
+        type={props.type}
+        name={props.name}
+        id={props.name}
+        value=""
+      />
+      {props.name}
+    </label>
+  </>
+);
 
 Input.propTypes = {
   type: PropTypes.string.isRequired,

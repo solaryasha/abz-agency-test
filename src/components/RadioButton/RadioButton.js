@@ -1,19 +1,25 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Input } from '../Input/Input';
+import { RadioButtonShape } from '../../shapes/PropTypeShapes';
 
-export class RadioButton extends Component {
-  componentDidMount() {
+export const RadioButton = ({ content }) => {
+  const { positions } = content;
 
-  }
-
-  render() {
-    return (
-      <Input type="radio" name="Hello" value="FrontEnd"/>
-    );
-  }
-}
+  return (
+    <>
+      {
+        positions.map(positon => (
+          <Input
+            type="radio"
+            name={positon.name}
+            value={positon.name}
+          />
+        ))
+      }
+    </>
+  );
+};
 
 RadioButton.propTypes = {
-
+  content: RadioButtonShape.isRequired,
 };

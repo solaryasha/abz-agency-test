@@ -1,8 +1,10 @@
-// export const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=5';
-// eslint-disable-next-line max-len
+
 import queryString from 'query-string';
 
 const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
+
+// eslint-disable-next-line max-len
+export const positionsUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/positions';
 
 export const getUrl = (pageNumber, howMuch) => queryString.stringifyUrl({
   url,
