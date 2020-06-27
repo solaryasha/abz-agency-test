@@ -6,7 +6,7 @@ import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import { RadioButton } from '../RadioButton/RadioButton';
 import FileInput from '../FileInput/FileInput';
-import { tokenUrl } from '../../API/urlHandler';
+import { tokenUrl, url } from '../../API/urlHandler';
 
 export class Form extends Component {
   state = {
@@ -16,8 +16,8 @@ export class Form extends Component {
   handleInputChange = ({ target }) => {
     const { value, name, id } = target;
 
-    const valueToSave = name === 'radio'
-      ? id
+    const valueToSave = name === 'position_id'
+      ? Number(id)
       : value;
 
     this.setState({
@@ -25,41 +25,52 @@ export class Form extends Component {
     });
   }
 
-  getToken = () => {
-    fetch(tokenUrl)
-      .then(response => response.json())
-      .then(({ token })=> this.setState({ token }));
-  }
-
   handleUploadFile = (event) => {
     this.setState({
-      image: event.target.files[0],
+      photo: event.target.files[0],
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async(event) => {
     event.preventDefault();
-    this.getToken();
+    const formData = new FormData();
+    const res = await fetch(tokenUrl);
+    const { token } = await res.json();
+
+    Object.entries(this.state)
+      .forEach(item => formData.append(item[0], item[1]));
+
+    const options = this.#getrequestOptions(formData, token);
+
+    await fetch(url, options)
+      .then(response => response.json())
+      .then(data => { console.log(data); });
   }
+
+  #getrequestOptions = (getData, newToken) => ({
+    method: 'POST',
+    headers: { Token: newToken },
+    body: getData,
+  })
 
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <Input
           type="name"
-          name="Name"
+          name="name"
           onChange={this.handleInputChange}
           value={this.state.name}
         />
         <Input
           type="email"
-          name="Email"
+          name="email"
           onChange={this.handleInputChange}
           value={this.state.email}
         />
         <Input
           type="phone"
-          name="Phone"
+          name="phone"
           onChange={this.handleInputChange}
           value={this.state.phone}
         />

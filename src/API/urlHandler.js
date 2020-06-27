@@ -2,7 +2,7 @@
 
 import queryString from 'query-string';
 
-const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
+export const url = 'https://frontend-test-assignment-api.abz.agency/api/v1/users';
 
 export const positionsUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/positions';
 export const tokenUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/token';

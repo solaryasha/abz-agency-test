@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 export const Input = props => (
   <>
-    <label htmlFor={props.name}>{props.name}</label>
+    <label htmlFor={props.id}>{props.name}</label>
     <input
       type={props.type}
       name={
         props.type === 'radio'
-          ? 'radio'
+          ? 'position_id'
           : props.name
       }
       id={props.id}
