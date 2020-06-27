@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 
 export const Input = (props) => (
   <>
-    <label htmlFor={props.name}>
-      <input
-        type={props.type}
-        name={props.name}
-        id={props.name}
-        value=""
-      />
-      {props.name}
-    </label>
+    <label htmlFor={props.name}>{props.name}</label>
+    <input
+      type={props.type}
+      name={
+        props.type === 'radio'
+          ? 'radio'
+          : props.name
+      }
+      id={props.id}
+      value={props.value}
+      onChange={event => props.onChange(event)}
+    />
   </>
 );
 

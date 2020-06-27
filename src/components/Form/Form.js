@@ -5,31 +5,52 @@ import './Form.scss';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import { RadioButton } from '../RadioButton/RadioButton';
-import { positionsUrl } from '../../API/urlHandler';
 
 export class Form extends Component {
   state = {
-    position: null,
+
   }
 
-  componentDidMount() {
-    fetch(positionsUrl)
-      .then(response => response.json())
-      .then(data => this.setState(prevState => ({ position: data })));
+  handleInputChange = ({ target }) => {
+    const { value, type, id } = target;
+
+    const valueToSave = type === 'radio'
+      ? id
+      : value;
+
+    this.setState({
+      [type]: valueToSave,
+    });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log([...event.target.children]);
   }
 
   render() {
-
     return (
-      <form className="form">
-        <Input type="name" name="Name" />
-        <Input type="email" name="Email" />
-        <Input type="phone" name="Phone" />
-        {this.state.position
-          ? <RadioButton content={this.state.position} />
-          : this.state.position
-        }
-        <Input type="file" />
+      <form className="form" onSubmit={this.handleSubmit}>
+        <Input
+          type="name"
+          name="Name"
+          onChange={this.handleInputChange}
+          value={this.state.name}
+        />
+        <Input
+          type="email"
+          name="Email"
+          onChange={this.handleInputChange}
+          value={this.state.email}
+        />
+        <Input
+          type="phone"
+          name="Phone"
+          onChange={this.handleInputChange}
+          value={this.state.phone}
+        />
+        <RadioButton onChange={this.handleInputChange} />
+        <Input type="file" onChange={this.handleInputChange} />
         <Button type="submit" text="Sign up now" />
       </form>
     );
