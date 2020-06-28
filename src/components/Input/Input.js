@@ -1,5 +1,6 @@
 import React, {} from 'react';
 import PropTypes from 'prop-types';
+import { Error } from '../../UI/Error/Error';
 
 export const Input = props => (
   <>
@@ -15,6 +16,10 @@ export const Input = props => (
       value={props.value}
       onChange={event => props.onChange(event)}
     />
+    {props.error
+      ? <Error message={props.error} />
+      : null
+    }
   </>
 );
 

@@ -47,20 +47,27 @@ export class Form extends Component {
     event.preventDefault();
 
     const errors = validateForm(this.state);
-    console.log(errors);
 
-    // const formData = new FormData();
-    // const res = await fetch(tokenUrl);
-    // const { token } = await res.json();
+    Object.entries(errors).forEach((key) => {
+      this.setState({ [`error${key[0]}`]: key[1] });
+    });
 
-    // Object.entries(this.state)
-    //   .forEach(item => formData.append(item[0], item[1]));
+    if (!Object.keys(errors).length) {
+      const formData = new FormData();
+      const res = await fetch(tokenUrl);
+      const { token } = await res.json();
 
-    // const options = createRequestBody(formData, token);
+      Object.entries(this.state)
+        .forEach(item => formData.append(item[0], item[1]));
 
-    // await fetch(url, options)
-    //   .then(response => response.json())
-    //   .then(data => { console.log(data); });
+      const options = createRequestBody(formData, token);
+
+      await fetch(url, options)
+        .then(response => response.json())
+        .then(data => { console.log(data); });
+
+      this.setState({ showModal: true });
+    }
   }
 
   render() {
@@ -82,25 +89,27 @@ export class Form extends Component {
           name="name"
           onChange={this.handleInputChange}
           value={this.state.name}
+          error={this.state.errorname}
         />
         <Input
           type="text"
           name="email"
           onChange={this.handleInputChange}
           value={this.state.email}
+          error={this.state.erroremail}
         />
         <Input
           type="phone"
           name="phone"
           onChange={this.handleInputChange}
           value={this.state.phone}
+          error={this.state.errorphone}
         />
         <RadioButton onChange={this.handleInputChange} />
         <FileInput onChange={this.handleUploadFile} />
         <Button
           type="submit"
           text="Sign up now"
-          onClick={this.showModalHandler}
         />
       </form>
     );
