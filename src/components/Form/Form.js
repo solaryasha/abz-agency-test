@@ -7,10 +7,12 @@ import { Input } from '../Input/Input';
 import { RadioButton } from '../RadioButton/RadioButton';
 import FileInput from '../FileInput/FileInput';
 import { tokenUrl, url } from '../../API/urlHandler';
+import { Modal } from '../../UI/Modal/Modal';
+import { FormSummary } from './FormSummary/FormSummary';
 
 export class Form extends Component {
   state = {
-
+    showModal: null,
   }
 
   handleInputChange = ({ target }) => {
@@ -29,6 +31,14 @@ export class Form extends Component {
     this.setState({
       photo: event.target.files[0],
     });
+  }
+
+  showModalHandler = () => {
+    this.setState({ showModal: true });
+  }
+
+  hideModalHandler= () => {
+    this.setState({ showModal: null });
   }
 
   handleSubmit = async(event) => {
@@ -56,6 +66,14 @@ export class Form extends Component {
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
+        {this.state.showModal
+          ? (
+            <Modal>
+              <FormSummary onClick={this.hideModalHandler} />
+            </Modal>
+          )
+          : this.state.showModal
+        }
         <Input
           type="name"
           name="name"
@@ -76,7 +94,11 @@ export class Form extends Component {
         />
         <RadioButton onChange={this.handleInputChange} />
         <FileInput onChange={this.handleUploadFile} />
-        <Button type="submit" text="Sign up now" />
+        <Button
+          type="submit"
+          text="Sign up now"
+          onClick={this.showModalHandler}
+        />
       </form>
     );
   }
