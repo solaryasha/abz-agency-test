@@ -10,6 +10,7 @@ import { tokenUrl, url, createRequestBody } from '../../API/urlHandler';
 import { Modal } from '../../UI/Modal/Modal';
 import { FormSummary } from './FormSummary/FormSummary';
 import { Backdrop } from '../../UI/Backdrop/Backdrop';
+import { validateForm } from './FormValidation/FormValidation';
 
 export class Form extends Component {
   state = {
@@ -44,18 +45,22 @@ export class Form extends Component {
 
   handleSubmit = async(event) => {
     event.preventDefault();
-    const formData = new FormData();
-    const res = await fetch(tokenUrl);
-    const { token } = await res.json();
 
-    Object.entries(this.state)
-      .forEach(item => formData.append(item[0], item[1]));
+    const errors = validateForm(this.state);
+    console.log(errors);
 
-    const options = createRequestBody(formData, token);
+    // const formData = new FormData();
+    // const res = await fetch(tokenUrl);
+    // const { token } = await res.json();
 
-    await fetch(url, options)
-      .then(response => response.json())
-      .then(data => { console.log(data); });
+    // Object.entries(this.state)
+    //   .forEach(item => formData.append(item[0], item[1]));
+
+    // const options = createRequestBody(formData, token);
+
+    // await fetch(url, options)
+    //   .then(response => response.json())
+    //   .then(data => { console.log(data); });
   }
 
   render() {
@@ -79,7 +84,7 @@ export class Form extends Component {
           value={this.state.name}
         />
         <Input
-          type="email"
+          type="text"
           name="email"
           onChange={this.handleInputChange}
           value={this.state.email}
