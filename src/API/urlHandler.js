@@ -14,6 +14,12 @@ export const getUrl = (pageNumber, howMuch) => queryString.stringifyUrl({
   },
 });
 
+export const createRequestBody = (getData, newToken) => ({
+  method: 'POST',
+  headers: { Token: newToken },
+  body: getData,
+});
+
 export const downloadData = (URL) => {
   const data = [];
 

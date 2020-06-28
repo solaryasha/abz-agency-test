@@ -6,9 +6,10 @@ import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import { RadioButton } from '../RadioButton/RadioButton';
 import FileInput from '../FileInput/FileInput';
-import { tokenUrl, url } from '../../API/urlHandler';
+import { tokenUrl, url, createRequestBody } from '../../API/urlHandler';
 import { Modal } from '../../UI/Modal/Modal';
 import { FormSummary } from './FormSummary/FormSummary';
+import { Backdrop } from '../../UI/Backdrop/Backdrop';
 
 export class Form extends Component {
   state = {
@@ -50,27 +51,24 @@ export class Form extends Component {
     Object.entries(this.state)
       .forEach(item => formData.append(item[0], item[1]));
 
-    const options = this.#getrequestOptions(formData, token);
+    const options = createRequestBody(formData, token);
 
     await fetch(url, options)
       .then(response => response.json())
       .then(data => { console.log(data); });
   }
 
-  #getrequestOptions = (getData, newToken) => ({
-    method: 'POST',
-    headers: { Token: newToken },
-    body: getData,
-  })
-
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         {this.state.showModal
           ? (
-            <Modal>
-              <FormSummary onClick={this.hideModalHandler} />
-            </Modal>
+            <>
+              <Backdrop />
+              <Modal>
+                <FormSummary onClick={this.hideModalHandler} />
+              </Modal>
+            </>
           )
           : this.state.showModal
         }

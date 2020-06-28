@@ -1,0 +1,9 @@
+.modal {
+  position: fixed;
+  left: calc((100% - 20rem) / 2);
+  top: calc((100vh - 100px) / 2);
+
+  width: 20rem;
+
+  background-color: #fff;
+}

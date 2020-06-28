@@ -6,7 +6,7 @@ export const FormSummary = ({ onClick }) => (
     <header>
       <h3>Congratulations</h3>
       <span
-        onClick={() => onClick}
+        onClick={() => onClick()}
         onKeyPress={() => onClick}
         role="button"
         tabIndex={0}
