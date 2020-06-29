@@ -52,22 +52,22 @@ export class Form extends Component {
       this.setState({ [`error${key[0]}`]: key[1] });
     });
 
-    if (!Object.keys(errors).length) {
-      const formData = new FormData();
-      const res = await fetch(tokenUrl);
-      const { token } = await res.json();
+    // if (!Object.keys(errors).length) {
+    //   const formData = new FormData();
+    //   const res = await fetch(tokenUrl);
+    //   const { token } = await res.json();
 
-      Object.entries(this.state)
-        .forEach(item => formData.append(item[0], item[1]));
+    //   Object.entries(this.state)
+    //     .forEach(item => formData.append(item[0], item[1]));
 
-      const options = createRequestBody(formData, token);
+    //   const options = createRequestBody(formData, token);
 
-      await fetch(url, options)
-        .then(response => response.json())
-        .then(data => { console.log(data); });
+    //   await fetch(url, options)
+    //     .then(response => response.json())
+    //     .then(data => { console.log(data); });
 
-      this.setState({ showModal: true });
-    }
+    //   this.setState({ showModal: true });
+    // }
   }
 
   render() {

@@ -1,0 +1,38 @@
+@import '../../styles/main.scss';
+
+.promo__highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 0 76px;
+  background-image: url(../../assets/480.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $bg-color;
+}
+
+.promo__title {
+  max-width: 90%;
+  margin-bottom: 1.25rem;
+}
+
+.promo__texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.promo__text {
+  margin-bottom: 2px;
+
+  &--nomobile {
+    display: none;
+  }
+}
+
+.promo__button {
+  margin-top: 24px;
+}

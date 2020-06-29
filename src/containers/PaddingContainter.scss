@@ -1,0 +1,6 @@
+.padding-container {
+  padding: 0 15px;
+  @media (min-width: 768px) {
+    padding: 30px;
+  }
+}

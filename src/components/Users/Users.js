@@ -13,13 +13,13 @@ export class Users extends Component {
   componentDidMount() {
     const correctUrl = getUrl(this.state.page, 6);
 
-    this.#downloadData(correctUrl);
+    // this.#downloadData(correctUrl);
   }
 
   showMoreClick = () => {
     const correctUrl = getUrl(this.state.page, 6);
 
-    this.#downloadData(correctUrl);
+    // this.#downloadData(correctUrl);
   }
 
   #downloadData = (correctUrl) => {
