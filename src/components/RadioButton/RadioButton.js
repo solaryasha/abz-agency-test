@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Input } from '../Input/Input';
 import { RadioButtonShape } from '../../shapes/PropTypeShapes';
 import { positionsUrl } from '../../API/urlHandler';
+import './RadioButton.scss';
 
 export class RadioButton extends Component {
   state= {
@@ -16,18 +17,21 @@ export class RadioButton extends Component {
 
   render() {
     return (
-      <div>
+      <div className="radio-buttons">
         <p>Select your position: </p>
         {
           this.state.positions
             ? this.state.positions.map(position => (
-              <Input
-                type="radio"
-                name={position.name}
-                value={position.name}
-                id={position.id}
-                onChange={this.props.onChange}
-              />
+              <div className="radio-buttons__wrapper">
+                <Input
+                  type="radio"
+                  name={position.name}
+                  value={position.name}
+                  id={position.id}
+                  onChange={this.props.onChange}
+                />
+              </div>
+
             ))
             : this.state.position
         }

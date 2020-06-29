@@ -2,7 +2,7 @@
 
 .users {
   padding-top: 76px;
-
+  padding-bottom: 76px;
   background-color: $bg-color2;
   text-align: center;
 
@@ -15,6 +15,12 @@
     display: grid;
     grid-auto-columns: 200px;
     justify-content: center;
-    grid-row-gap: 27px;
+    grid-row-gap: 41px;
+
+    margin-bottom: 15px;
+  }
+
+  button {
+    margin: auto;
   }
 }
