@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Media from 'react-media';
 import User from './User/User';
 import { Button } from '../Button/Button';
 import { Heading } from '../Heading/Heading';
 import { getUrl } from '../../API/urlHandler';
+import './Users.scss';
 
 export class Users extends Component {
   state = {
@@ -11,9 +13,10 @@ export class Users extends Component {
   }
 
   componentDidMount() {
-    const correctUrl = getUrl(this.state.page, 6);
+    let correctUrl;
 
-    // this.#downloadData(correctUrl);
+    correctUrl = getUrl(this.state.page, 6);
+    this.#downloadData(correctUrl);
   }
 
   showMoreClick = () => {
@@ -34,16 +37,38 @@ export class Users extends Component {
 
   render() {
     return (
-      <section>
+      <section className="users">
         <Heading content="Our cheerful users" />
-        <p>
+        <p className="users__text">
           Attention! Sorting users by registration date
         </p>
-        {
-          this.state.data
-            ? this.state.data.map(user => <User content={user} />)
-            : this.state.data
-        }
+
+        <div className="users__grid">
+          {
+            this.state.data
+              ? (
+                <Media
+                  queries={{
+                    mobile: '(max-width: 768px)',
+                    medium: '(min-width: 769px)',
+                  }}
+                >
+                  {
+                    (matches) => {
+                      if (matches.mobile) {
+                        return (this.state.data
+                          .slice(0, 3).map(user => <User content={user} />));
+                      }
+
+                      return (this.state.data
+                        .map(user => <User content={user} />));
+                    }
+                  }
+                </Media>
+              )
+              : this.state.data
+          }
+        </div>
         <Button
           text="Show more"
           type="button"

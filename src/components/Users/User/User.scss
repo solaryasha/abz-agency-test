@@ -1,0 +1,29 @@
+.user {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__name {
+    text-overflow: ellipsis;
+    margin-bottom: 21px;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    margin-bottom: 1.25rem;
+  }
+
+  &__position {
+    margin-bottom: 12px;
+  }
+
+  &__email {
+    text-overflow: ellipsis;
+    white-space: nowrap; /* paragraph to one line */
+    overflow: hidden; /* older browsers */
+    max-width: 25ch;
+
+    margin-bottom: 12px;
+  }
+}

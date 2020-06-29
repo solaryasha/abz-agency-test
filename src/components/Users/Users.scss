@@ -1,0 +1,20 @@
+@import '../../styles/main.scss';
+
+.users {
+  padding-top: 76px;
+
+  background-color: $bg-color2;
+  text-align: center;
+
+  &__text {
+    margin-top: 12px;
+    margin-bottom: 36px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-auto-columns: 200px;
+    justify-content: center;
+    grid-row-gap: 27px;
+  }
+}
