@@ -1,0 +1,47 @@
+@import '../../styles/main.scss';
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4.5rem;
+
+  &__image {
+    display: block;
+    width: 88%;
+    margin: 36px auto;
+  }
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__first-block {
+    margin: 0 -1px 1.5rem;
+  }
+
+  &__second-block {
+    margin-bottom: 30px;
+  }
+
+  &__heading {
+    margin: 0 2px 18px;
+  }
+
+  &__text {
+    line-height: 1.5;
+    letter-spacing: -0.004em;
+    text-align: justify;
+    
+  }
+
+  &__link {
+    font-weight: 700;
+    text-decoration: none;
+    color: $primary-color;
+    text-align: center;
+  }
+
+}
