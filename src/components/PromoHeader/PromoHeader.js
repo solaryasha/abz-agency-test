@@ -18,6 +18,10 @@ export class PromoHeader extends Component {
     this.setState({ sidebarOpen: true });
   }
 
+  menuCloseHandler = () => {
+    this.setState({ sidebarOpen: false });
+  }
+
   render() {
     const { sidebarOpen } = this.state;
 
@@ -32,7 +36,10 @@ export class PromoHeader extends Component {
             <HamburgerMenu onClick={this.menuClickHandler} />
           </div>
         </PaddingContainer>
-        <SideBar isOpen={sidebarOpen} />
+        <SideBar
+          isOpen={sidebarOpen}
+          onClick={this.menuCloseHandler}
+        />
       </>
     );
   }

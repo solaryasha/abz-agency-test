@@ -12,7 +12,7 @@ export class Registration extends Component {
 
   render() {
     return (
-      <div className="registration">
+      <div id="registration" className="registration">
         <Heading content="Register to get a work" />
         <p className="registration__message">
           Attention! After successful registration and alert, update the

@@ -1,29 +1,92 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-export const MobileNavigation = props => {
+export const MobileNavigation = ({ onClick }) => {
   return (
-    <nav className="navigation">
+    <nav
+      className="navigation"
+      onClick={() => onClick()}
+    >
       <ul className="navigation__block">
-        <li className="navigation__items">About me</li>
-        <li className="navigation__items">Relationships</li>
-        <li className="navigation__items">Users</li>
-        <li className="navigation__items">Sign Up</li>
-        <li className="navigation__items">Terms and Conditions</li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            About me
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Relationships
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Users
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Sign Up
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Terms and Conditions
+          </a>
+        </li>
       </ul>
       <ul className="navigation__block">
-        <li className="navigation__items">How it works</li>
-        <li className="navigation__items">Partnership</li>
-        <li className="navigation__items">Help</li>
-        <li className="navigation__items">Leave testimonial</li>
-        <li className="navigation__items">Contact us</li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            How it works
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Partnership
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Help
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Leave testimonial
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Contact us
+          </a>
+        </li>
       </ul>
       <ul className="navigation__block">
-        <li className="navigation__items">Articles</li>
-        <li className="navigation__items">Our news</li>
-        <li className="navigation__items">Testimonials</li>
-        <li className="navigation__items">Licenses</li>
-        <li className="navigation__items">Privacy Policy</li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Articles
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Our news
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Testimonials
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Licenses
+          </a>
+        </li>
+        <li className="navigation__items">
+          <a className="navigation__link" href="#registration">
+            Privacy Policy
+          </a>
+        </li>
       </ul>
     </nav>
   );

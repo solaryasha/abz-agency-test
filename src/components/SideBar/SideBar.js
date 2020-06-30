@@ -7,7 +7,7 @@ import { Logo } from '../Logo/Logo';
 import './SideBar.scss';
 import { PaddingContainer } from '../../containers/PaddingContainer';
 
-export const SideBar = ({ isOpen }) => {
+export const SideBar = ({ isOpen, onClick }) => {
   let attachedClasses = ['sidebar', 'sidebar--closed'];
 
   if (isOpen) {
@@ -16,14 +16,12 @@ export const SideBar = ({ isOpen }) => {
 
   return (
     <>
-      {isOpen ? <Backdrop /> : isOpen}
+      {isOpen ? <Backdrop onClick={onClick} /> : isOpen}
       <div className={attachedClasses.join(' ')}>
-        {/* <PaddingContainer> */}
-        <div class="sidebar__logo">
+        <div className="sidebar__logo">
           <Logo />
         </div>
-        <MobileNavigation />
-        {/* </PaddingContainer> */}
+        <MobileNavigation onClick={onClick} />
       </div>
     </>
   );
@@ -31,4 +29,5 @@ export const SideBar = ({ isOpen }) => {
 
 SideBar.propTypes = {
   isOpen: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
