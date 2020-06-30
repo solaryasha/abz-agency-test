@@ -1,0 +1,36 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 80vw;
+  // height: 100vh;
+  padding-top: 11px;
+
+  background-color: #fff;
+
+  transition: transform 0.3s ease;
+
+
+  &--opened {
+    transform: translateX(0);
+  }
+
+  &--closed {
+    transform: translateX(-100%);
+  }
+
+  &__logo {
+    position: relative;
+    padding-left: 15px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      right: 15px;
+      width: calc(100% + 15px);
+      height: 1px;
+      background-color: rgba(34,36,38,.15);
+    }
+  }
+}

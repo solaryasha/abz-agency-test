@@ -2,7 +2,10 @@
 
 .hamburger {
   // width: calc((360px / 6) - 15px);
-  margin-top: 2px;
+  margin-top: -3px;
+  background-color: inherit;
+  padding: 0;
+  border: none;
   width: 20px;
 
   &__line {

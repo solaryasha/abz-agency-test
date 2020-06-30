@@ -2,9 +2,13 @@ import React from 'react';
 import './HamburgerMenu.scss';
 
 export const HamburgerMenu = (props) => (
-  <div className="hamburger">
+  <button
+    type="button"
+    className="hamburger"
+    onClick={() => props.onClick()}
+  >
     <span className="hamburger__line" />
     <span className="hamburger__line" />
     <span className="hamburger__line" />
-  </div>
+  </button>
 );

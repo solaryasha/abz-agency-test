@@ -5,7 +5,7 @@ import logo from '../../assets/logo.svg'
 
 export const Logo = props => {
   return (
-    <div>
+    <div className="logo">
       <img src={logo} alt="logo" />
     </div>
   );

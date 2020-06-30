@@ -5,14 +5,12 @@ export const FormSummary = ({ onClick }) => (
   <>
     <header>
       <h3>Congratulations</h3>
-      <span
+      <button
         onClick={() => onClick()}
-        onKeyPress={() => onClick}
-        role="button"
-        tabIndex={0}
+        type="button"
       >
         x
-      </span>
+      </button>
     </header>
     <p>You have successfully passed the registration</p>
     <Button

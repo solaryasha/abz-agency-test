@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Navigation.scss';
 
 export const Navigation = props => {
   return (
-    <nav>
+    <nav className="navigation">
       <ul>
-        <li>About me</li>
-        <li>Relationships</li>
-        <li>Requirments</li>
-        <li>Users</li>
-        <li>Sign Up</li>
+        <li className="navigation__items">About me</li>
+        <li className="navigation__items">Relationships</li>
+        <li className="navigation__items">Requirments</li>
+        <li className="navigation__items">Users</li>
+        <li className="navigation__items">Sign Up</li>
       </ul>
+      {props.children}
     </nav>
   );
 };
