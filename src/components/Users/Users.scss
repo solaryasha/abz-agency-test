@@ -3,16 +3,29 @@
 .users {
   padding-top: 76px;
   padding-bottom: 76px;
+  @media (min-width: 768px) {
+    padding-top: 113px;
+  }
   background-color: $bg-color2;
   text-align: center;
 
   &__text {
     margin-top: 12px;
-    margin-bottom: 36px;
+    @media (min-width: 768px) {
+      margin-top: 20px;
+    }
+    // margin-bottom: 36px;
   }
 
   &__grid {
     display: grid;
+    @media (min-width: 768px) {
+      margin-top: 77px;
+      grid-template-columns: repeat(3, 200px);
+      justify-content: space-between;
+      padding: 0 40px;
+      grid-row-gap: 121px;
+    }
     grid-auto-columns: 200px;
     justify-content: center;
     grid-row-gap: 41px;

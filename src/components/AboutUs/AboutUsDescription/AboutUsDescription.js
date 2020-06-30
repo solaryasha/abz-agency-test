@@ -5,7 +5,7 @@ import { AboutUsText } from './AboutUsText/AboutUsText';
 
 export const AboutUsDescription = props => {
   return (
-    <div>
+    <div className="about-us__description">
       <AboutUsImage />
       <AboutUsText />
     </div>

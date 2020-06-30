@@ -49,8 +49,8 @@ export class Users extends Component {
               ? (
                 <Media
                   queries={{
-                    mobile: '(max-width: 768px)',
-                    medium: '(min-width: 769px)',
+                    mobile: '(max-width: 767px)',
+                    medium: '(min-width: 768px)',
                   }}
                 >
                   {

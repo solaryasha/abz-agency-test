@@ -1,13 +1,13 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Logo } from '../Logo/Logo';
-import { Navigation } from '../Navigation/Navigation';
-import { DesktopOnly } from '../../containers/DesktopOnly';
-import { HamburgerMenu } from '../../UI/HamburgerMenu/HamburgerMenu';
+import { Logo } from '../../Logo/Logo';
+import { Navigation } from '../../Navigation/Navigation';
+import { DesktopOnly } from '../../../containers/DesktopOnly';
+import { HamburgerMenu } from '../../../UI/HamburgerMenu/HamburgerMenu';
 import './PromoHeader.scss';
-import { PaddingContainer } from '../../containers/PaddingContainer';
-import { SideBar } from '../SideBar/SideBar';
+import { PaddingContainer } from '../../../containers/PaddingContainer';
+import { SideBar } from '../../SideBar/SideBar';
 
 export class PromoHeader extends Component {
   state= {

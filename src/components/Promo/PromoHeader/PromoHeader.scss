@@ -2,9 +2,12 @@
 .promo__header {
   box-sizing: border-box;
   margin-top: 11px;
+  @media (min-width: 768px) {
+    margin-top: 21px;
+    margin-bottom: 14px;
+  }
   margin-bottom: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color:
 }
