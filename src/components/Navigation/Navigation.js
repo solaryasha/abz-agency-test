@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Navigation.scss';
+import { NavigationBlock } from './NavigationBlock/NavigationBlock';
+import { desktopNavigation } from './NavigationItems/NavigationItems';
 
-export const Navigation = props => {
+export const Navigation = ({ onClick }) => {
   return (
     <nav className="navigation">
-      <ul>
-        <li className="navigation__items">About me</li>
-        <li className="navigation__items">Relationships</li>
-        <li className="navigation__items">Requirments</li>
-        <li className="navigation__items">Users</li>
-        <li className="navigation__items">Sign Up</li>
-      </ul>
-      {props.children}
+      <NavigationBlock content={desktopNavigation} onClick={onClick} />
     </nav>
   );
 };
 
 Navigation.propTypes = {
-  
+  onClick: PropTypes.func.isRequired,
 };

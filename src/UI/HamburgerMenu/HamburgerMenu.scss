@@ -2,6 +2,10 @@
 
 .hamburger {
   // width: calc((360px / 6) - 15px);
+  @media (min-width: 769px) {
+    display: none;
+  }
+  
   margin-top: -3px;
   background-color: inherit;
   padding: 0;

@@ -31,7 +31,7 @@ export class PromoHeader extends Component {
           <div className="promo__header">
             <Logo />
             <DesktopOnly>
-              <Navigation />
+              <Navigation onClick={this.menuCloseHandler} />
             </DesktopOnly>
             <HamburgerMenu onClick={this.menuClickHandler} />
           </div>

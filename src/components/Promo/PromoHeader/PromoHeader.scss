@@ -6,6 +6,11 @@
     margin-top: 21px;
     margin-bottom: 14px;
   }
+
+  @media (min-width: 1024px) {
+    margin: 0;
+    height: 60px;
+  }
   margin-bottom: 4px;
   display: flex;
   justify-content: space-between;
