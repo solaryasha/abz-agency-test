@@ -110,6 +110,7 @@ export class Form extends Component {
         <Button
           type="submit"
           text="Sign up now"
+          styles="form"
         />
       </form>
     );

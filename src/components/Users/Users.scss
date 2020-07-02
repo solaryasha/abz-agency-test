@@ -6,6 +6,11 @@
   @media (min-width: 768px) {
     padding-top: 113px;
   }
+
+  @media (min-width: 1024px) {
+    padding-top: 123px;
+    padding-bottom: 160px;
+  }
   background-color: $bg-color2;
   text-align: center;
 
@@ -26,10 +31,15 @@
       padding: 0 40px;
       grid-row-gap: 121px;
     }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 276px);
+      grid-row-gap: 121px;
+      margin-bottom: 0;
+    }
     grid-auto-columns: 200px;
     justify-content: center;
     grid-row-gap: 41px;
-
     margin-bottom: 15px;
   }
 

@@ -3,7 +3,7 @@
 .about-us {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   // padding-top: 4.5rem;
   // padding-bottom: 4.5rem;
@@ -29,6 +29,11 @@
       margin-top: 5px;
       margin-left: 2px;
     }
+
+    @media (min-width: 1024px) {
+     margin-left: 30px;
+    }
+    
   }  
 
   &__texts {
@@ -38,12 +43,19 @@
     @media (min-width: 768px) {
       align-items: flex-start;
     }
+    @media (min-width: 1024px) {
+      margin-left: 35px;
+     }
+
   }
 
   &__first-block {
     margin: 0 -1px 1.5rem;
     @media (min-width: 768px) {
       margin: 1px 0px 25px;
+    }
+    @media (min-width: 1024px) {
+      margin: 1px 0px 22px;
     }
   }
 
@@ -52,6 +64,11 @@
     @media (min-width: 768px) {
       margin: 1px 0px 29px;
       letter-spacing: -0.015em;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 29px;
+      letter-spacing: normal;
     }
   }
 

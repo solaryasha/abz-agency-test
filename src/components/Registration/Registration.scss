@@ -1,13 +1,23 @@
 .registration {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   padding-top: 79px;
-
+  @media (min-width: 1024px) {
+    padding-top: 152px;
+    // align-items: center;
+  }
   &__message {
     margin-top: 19px;
     margin-bottom: 30px;
     text-align: center;
     padding: 0px 9%;
+
+    @media (min-width: 1024px) {
+      width: 45%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
