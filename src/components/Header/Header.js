@@ -5,6 +5,8 @@ import { Logo } from '../Logo/Logo';
 import { DesktopOnly } from '../../containers/DesktopOnly';
 import { Navigation } from '../Navigation/Navigation';
 import { HamburgerMenu } from '../../UI/HamburgerMenu/HamburgerMenu';
+import { SideBar } from '../SideBar/SideBar';
+import { PaddingContainer } from '../../containers/PaddingContainer';
 
 export class Header extends Component {
   state= {
@@ -23,12 +25,16 @@ export class Header extends Component {
     const { sidebarOpen } = this.state;
 
     return (
-      <div className="header">
+      <div className="header padding-container">
         <Logo />
         <DesktopOnly>
           <Navigation onClick={this.menuCloseHandler} />
         </DesktopOnly>
         <HamburgerMenu onClick={this.menuClickHandler} />
+        <SideBar
+          isOpen={sidebarOpen}
+          onClick={this.menuCloseHandler}
+        />
       </div>
     );
   }

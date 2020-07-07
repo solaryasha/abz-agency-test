@@ -37,13 +37,13 @@ export class Users extends Component {
 
   render() {
     return (
-      <section className="users">
+      <section className="users section-container">
         <Heading content="Our cheerful users" />
         <p className="users__text">
           Attention! Sorting users by registration date
         </p>
 
-        <div className="users__grid">
+        <div className="users__grid padding-container">
           {
             this.state.data
               ? (

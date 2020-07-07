@@ -7,9 +7,14 @@ import { smallResolutionText, highResolutionText } from '../PromoText/PromoText'
 
 const PromoHighlight = props => {
   return (
-    <div className="promo__highlight">
+    <div className="padding-container promo__highlight">
       <h1 className="promo__title">
-        Test assignment for frontend developer position
+        Test assignment
+        <br />
+        for frontend
+        <br />
+        developer position
+        <br />
       </h1>
       <Media
         queries={{

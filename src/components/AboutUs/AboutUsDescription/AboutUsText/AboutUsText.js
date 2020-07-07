@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const AboutUsText = memo((props) => {
   return (
-    <div className="about-us__texts">
+    <div className="about-us__texts padding-container">
       <h3 className="about-us__heading">I am cool frontend developer</h3>
       <div className="about-us__first-block">
         <p className="about-us__text">

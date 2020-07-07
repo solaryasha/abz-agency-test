@@ -1,8 +1,7 @@
 @import '../../styles/main.scss';
 
 .users {
-  padding-top: 76px;
-  padding-bottom: 76px;
+  
   @media (min-width: 768px) {
     padding-top: 113px;
   }
@@ -40,7 +39,7 @@
     grid-auto-columns: 200px;
     justify-content: center;
     grid-row-gap: 41px;
-    margin-bottom: 15px;
+    margin: 30px 0;
   }
 
   button {

@@ -6,10 +6,7 @@ import PromoHighlight from './PromoHighlight/PromoHighlight';
 
 export const Promo = props => {
   return (
-    <div>
-      {/* <PromoHeader /> */}
-      <PromoHighlight />
-    </div>
+    <PromoHighlight />
   );
 };
 
