@@ -1,13 +1,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PromoHeader } from './PromoHeader/PromoHeader';
+// import { PromoHeader } from './PromoHeader/PromoHeader';
 import PromoHighlight from './PromoHighlight/PromoHighlight';
 
 export const Promo = props => {
   return (
     <div>
-      <PromoHeader />
+      {/* <PromoHeader /> */}
       <PromoHighlight />
     </div>
   );

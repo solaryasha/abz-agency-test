@@ -2,8 +2,6 @@
 .navigation {
   &__block {
     position: relative;
-    // padding-top: 31px;
-    // border-bottom: 2px solid tomato;
     @media (min-width: 769px) {
       display: flex;
       justify-content: space-between;
@@ -25,7 +23,7 @@
 
   &__items {
     // margin: 0 15px 21px;
-    @media (min-width: 1024px) {
+    @media (min-width: 769px) {
       margin-right: 30px;
       &:last-of-type {
         margin: 0;

@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Logo } from '../../Logo/Logo';
 import { Navigation } from '../../Navigation/Navigation';
 import { DesktopOnly } from '../../../containers/DesktopOnly';
@@ -27,15 +26,15 @@ export class PromoHeader extends Component {
 
     return (
       <>
-        <PaddingContainer>
-          <div className="promo__header">
-            <Logo />
-            <DesktopOnly>
-              <Navigation onClick={this.menuCloseHandler} />
-            </DesktopOnly>
-            <HamburgerMenu onClick={this.menuClickHandler} />
-          </div>
-        </PaddingContainer>
+        {/* <PaddingContainer> */}
+        <div className="promo__header">
+          <Logo />
+          <DesktopOnly>
+            <Navigation onClick={this.menuCloseHandler} />
+          </DesktopOnly>
+          <HamburgerMenu onClick={this.menuClickHandler} />
+        </div>
+        {/* </PaddingContainer> */}
         <SideBar
           isOpen={sidebarOpen}
           onClick={this.menuCloseHandler}

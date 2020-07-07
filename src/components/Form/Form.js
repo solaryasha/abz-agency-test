@@ -88,7 +88,7 @@ export class Form extends Component {
           type="name"
           name="name"
           onChange={this.handleInputChange}
-          value={this.state.name}
+          // value={this.state.name}
           error={this.state.errorname}
         />
         <Input

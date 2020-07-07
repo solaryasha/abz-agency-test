@@ -1,5 +1,4 @@
-
-.promo__header {
+.header {
   position: sticky;
   top: 0px;
   background-color: #fff;
@@ -8,7 +7,7 @@
   box-sizing: border-box;
   padding-top: 11px;
   @media (min-width: 768px) {
-    margin-top: 21px;
+    padding-top: 21px;
     margin-bottom: 14px;
   }
 
